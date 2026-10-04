@@ -11,12 +11,15 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve('./src'),
     },
   },
   build: {
     outDir: 'dist',
     sourcemap: false,
+    rollupOptions: {
+      external: [],
+    },
   },
   server: {
     host: '0.0.0.0',
