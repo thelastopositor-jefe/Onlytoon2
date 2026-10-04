@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 
-// Configuración limpia optimizada para Vercel
+// Configuración limpia sin variables de entorno globales problemáticas
 export default defineConfig({
   plugins: [
     react(),
@@ -17,9 +17,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    rollupOptions: {
-      external: [],
-    },
   },
   server: {
     host: '0.0.0.0',
